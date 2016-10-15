@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+  <link href="css/flexgrid.min.css" rel="stylesheet" type="text/css">
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header class="banner">
+  <div class="site-wrap">
+    <h1 class="banner__title">Docs</h1>
+  </div>
+</header>
+<nav class="site-nav">
+  <div class="site-wrap">
+    <ul class="site-nav__menu">
+      <li><a href="index.html">Getting started</a></li>
+      <li class="is-current"><a href="docs.html">Docs</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="site-wrap">
+  <h2>Introduction</h2>
+  The flexgrid consists of two base classes <code>.row</code> and <code>.col</code>.
+  Both of these has a bunch of modifiers prefixed with double dashes which should be used on top of the base class <code>&lt;div class="col col--*"&gt;...&lt;/div&gt;</code>.
+  <h2>Columns</h2>
+  <h3>12 column sizes</h3>
+  The flexgrid has 12 column sizes that can be combined in anyway possible. The width is accessed by simply using <code>.col--*</code>.
+  <code class="code code--block">
+    <div class="row">
+      <div class="col col--4">...</div>
+      <div class="col col--4">...</div>
+      <div class="col col--4">...</div>
+    </div>
+  </code>
+  <div class="row">
+    <div class="col col--6">
+      <div class="col__inner">
+        <code>.col--6</code>
+      </div>
+    </div>
+    <div class="col col--6">
+      <div class="col__inner">
+        <code>.col--6</code>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col--4">
+      <div class="col__inner">
+        <code>.col--4</code>
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        <code>.col--4</code>
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        <code>.col--4</code>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col--3">
+      <div class="col__inner">
+        <code>.col--3</code>
+      </div>
+    </div>
+    <div class="col col--3">
+      <div class="col__inner">
+        <code>.col--3</code>
+      </div>
+    </div>
+    <div class="col col--3">
+      <div class="col__inner">
+        <code>.col--3</code>
+      </div>
+    </div>
+    <div class="col col--3">
+      <div class="col__inner">
+        <code>.col--3</code>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col--2">
+      <div class="col__inner">
+        <code>.col--2</code>
+      </div>
+    </div>
+    <div class="col col--2">
+      <div class="col__inner">
+        <code>.col--2</code>
+      </div>
+    </div>
+    <div class="col col--2">
+      <div class="col__inner">
+        <code>.col--2</code>
+      </div>
+    </div>
+    <div class="col col--2">
+      <div class="col__inner">
+        <code>.col--2</code>
+      </div>
+    </div>
+    <div class="col col--2">
+      <div class="col__inner">
+        <code>.col--2</code>
+      </div>
+    </div>
+    <div class="col col--2">
+      <div class="col__inner">
+        <code>.col--2</code>
+      </div>
+    </div>
+  </div>
+  <h3>Offsets</h3>
+  As with the different sizes there are an equal amount off offsets that you can use.
+  <code class="code code--block">
+    <div class="row">
+      <div class="col col--6 col--offset-6">...</div>
+      <div class="col col--7 col--offset-5">...</div>
+      <div class="col col--8 col--offset-4">...</div>
+    </div>
+  </code>
+  <div class="row">
+    <div class="col col--6 col--offset-6">
+      <div class="col__inner">
+        <code>.col--offset-6</code>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col--7 col--offset-5">
+      <div class="col__inner">
+        <code>.col--offset-5</code>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col--8 col--offset-4">
+      <div class="col__inner">
+        <code>.col--offset-4</code>
+      </div>
+    </div>
+  </div>
+  <h3>Ordering</h3>
+  Sometimes you may want to re-order columns differently than what their source order says. This is simple with the class <code>.col--order-*</code>.
+  This becomes especially powerful when combining with responsive breakpoints <strong>(See below)</strong>.
+  <code class="code code--block">
+    <div class="row">
+      <div class="col col--4 col--order-3">1</div>
+      <div class="col col--4 col--order-2">2</div>
+      <div class="col col--4 col--order-1">3</div>
+    </div>
+  </code>
+  <div class="row">
+    <div class="col col--4 col--order-3">
+      <div class="col__inner">
+        <h5>1</h5>
+        <code>.col--order-3</code>
+      </div>
+    </div>
+    <div class="col col--4 col--order-2">
+      <div class="col__inner">
+        <h5>2</h5>
+        <code>.col--order-2</code>
+      </div>
+    </div>
+    <div class="col col--4 col--order-1">
+      <div class="col__inner">
+        <h5>3</h5>
+        <code>.col--order-1</code>
+      </div>
+    </div>
+  </div>
+  <h3>Responsive breakpoints</h3>
+  A grid system wouldn't be very helpful without the support of adapting the layout to different screen sizes.
+  Flexgrid comes with three breakpoints that can be used to only apply the modifier if the screen size matches.
+  To use responsive breakpoints prefix the modifier with one of the following:
+  <ul>
+    <li><code>.col--sm-*</code> for screen sizes > 768px.</li>
+    <li><code>.col--md-*</code> for screen sizes > 992px.</li>
+    <li><code>.col--lg-*</code> for screen sizes > 1200px.</li>
+  </ul>
+  You can prefix any of the modifiers above, <code>.col--sm-*</code>, <code>.col--sm-offset-*</code> and <code>.col--sm-order-*</code>.
+  If no prefix is set it will be applied to all screen sizes unless overriden by a prefixed modifier.
+  <code class="code code--block">
+    <div class="row">
+      <div class="col col--12 col--sm-5 col--md-4 col--lg-3">...</div>
+      <div class="col col--12 col--sm-7 col--md-8 col--lg-9">...</div>
+    </div>
+  </code>
+  <div class="row">
+    <div class="col col--12 col--sm-5 col--md-4 col--lg-3">
+      <div class="col__inner">
+        <code>.col--4 .col--sm-3 .col--md-2 .col--lg-1</code>
+      </div>
+    </div>
+    <div class="col col--12 col--sm-7 col--md-8 col--lg-9">
+      <div class="col__inner">
+        <code>.col--4 .col--sm-3 .col--md-2 .col--lg-1</code>
+      </div>
+    </div>
+  </div>
+  <h2>Rows</h2>
+  Flexgrid is built on flexbox (surprise ey?) which allows you to do some pretty neat alignment of the columns within the row.
+  <h3>Autofill width</h3>
+  Sometimes you don't want to do the math and just add columns and let the code figure out what the width should be.
+  Just add <code>.row--autofill</code> to evenly distribute the width among the columns.
+  <code class="code code--block">
+    <div class="row row--autofill">
+      <div class="col">...</div>
+      <div class="col">...</div>
+    </div>
+  </code>
+  <div class="row row--autofill">
+    <div class="col">
+      <div class="col__inner">
+        <code>.col</code>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col__inner">
+        <code>.col</code>
+      </div>
+    </div>
+  </div>
+  <div class="row row--autofill">
+    <div class="col">
+      <div class="col__inner">
+        <code>.col</code>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col__inner">
+        <code>.col</code>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col__inner">
+        <code>.col</code>
+      </div>
+    </div>
+  </div>
+  <h3>Equal height</h3>
+  Flexgrid makes handling one of the ick-iest problems of web design easy &mdash; equal height columns. Drop in the  class <code>.row--full-height</code> and it's done.
+  Often though you also want the child of the column to be full height. This is supported but requires some additional markup.
+  <code class="code code--block">
+    <div class="row row--full-height">
+      <div class="col col--4">
+        <div class="col__inner">...</div>
+      </div>
+      <div class="col col--4">
+        <div class="col__inner">...</div>
+      </div>
+      <div class="col col--4">
+        <div class="col__inner">...</div>
+      </div>
+    </div>
+  </code>
+  <div class="row row--full-height">
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+      </div>
+    </div>
+  </div>
+  <h3>Center vertically</h3>
+  To center the columns vertically based on the tallest use <code>.row--middle</code> to align the columns.
+  <div class="row row--middle">
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+      </div>
+    </div>
+  </div>
+  <h3>Align bottom</h3>
+  Align to the bottom of the row with <code>.row--bottom</code>.
+  <code class="code code--block">
+    <div class="row row--bottom">...</div>
+  </code>
+  <div class="row row--bottom">
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+      </div>
+    </div>
+  </div>
+  <h3>Center horizontally</h3>
+  To center on the horizontal axis use <code>.row--center</code>. This can be neat if you have a size that doesn't allow centering by using offsets.
+  <code class="code code--block">
+    <div class="row row--center">...</div>
+  </code>
+  <div class="row row--center">
+    <div class="col col--4">
+      <div class="col__inner">
+        I'm centered
+      </div>
+    </div>
+  </div>
+  <h3>Align right</h3>
+  To align right drop in the class <code>.row--right</code>.
+  <code class="code code--block">
+    <div class="row row--right">...</div>
+  </code>
+  <div class="row row--right">
+    <div class="col col--4">
+      <div class="col__inner">
+        I'm right aligned
+      </div>
+    </div>
+  </div>
+  <h3>Space around</h3>
+  A nice flexbox tool to even out the leftover space evenly around the columns. The class to use is <code>.row--around</code>.
+  <code class="code code--block">
+    <div class="row row--around">...</div>
+  </code>
+  <div class="row row--around">
+    <div class="col col--3">
+      <div class="col__inner">
+        I've space around me
+      </div>
+    </div>
+    <div class="col col--3">
+      <div class="col__inner">
+        I've space around me
+      </div>
+    </div>
+    <div class="col col--3">
+      <div class="col__inner">
+        I've space around me
+      </div>
+    </div>
+  </div>
+  <h3>Space between</h3>
+  Almost the same as space around but instead pushes columns to the edges maximizing space in between them. <code>.row--between</code>.
+  <code class="code code--block">
+    <div class="row row--between">...</div>
+  </code>
+  <div class="row row--between">
+    <div class="col col--3">
+      <div class="col__inner">
+        I've space between me
+      </div>
+    </div>
+    <div class="col col--3">
+      <div class="col__inner">
+        I've space between me
+      </div>
+    </div>
+    <div class="col col--3">
+      <div class="col__inner">
+        I've space between me
+      </div>
+    </div>
+  </div>
+  <h2>Column specific alignment</h2>
+  Sometimes you just want to align that single column and not care about the rest. This is something that flexgrids support.
+  Use these directly on the chosen column.
+  <h3>Full height</h3>
+  To just give one column full height (like in the equal heights example) use <code>.col--full-height</code>.
+  <p>
+    <strong>Note:</strong> Also requires the content of the column to be placed within a <code>.col__inner</code> if the child also should be full height.
+  </p>
+  <div class="row">
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      </div>
+    </div>
+    <div class="col col--4 col--full-height">
+      <div class="col__inner">
+        <code>.col--full-height</code>
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed D
+      </div>
+    </div>
+  </div>
+  <h3>Center</h3>
+  To only center one column vertically use <code>.col--center</code>.
+  <div class="row">
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      </div>
+    </div>
+    <div class="col col--4 col--center">
+      <div class="col__inner">
+        <code>.col--center</code>
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed D
+      </div>
+    </div>
+  </div>
+  <h3>Bottom</h3>
+  And lastly, aligning to the bottom with <code>.col--bottom</code>
+  <div class="row">
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      </div>
+    </div>
+    <div class="col col--4 col--bottom">
+      <div class="col__inner">
+        <code>.col--center</code>
+      </div>
+    </div>
+    <div class="col col--4">
+      <div class="col__inner">
+        Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed D
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
