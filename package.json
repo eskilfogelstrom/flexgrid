@@ -1,0 +1,29 @@
+{
+  "name": "flexgrid",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eskilfogelstrom/flexgrid.git"
+  },
+  "keywords": [
+    "flexbox",
+    "grid",
+    "css",
+    "scss",
+    "layout"
+  ],
+  "author": "Eskil Fogelström",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eskilfogelstrom/flexgrid/issues"
+  },
+  "homepage": "https://github.com/eskilfogelstrom/flexgrid#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2"
+  }
+}

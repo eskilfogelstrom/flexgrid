@@ -1,0 +1,39 @@
+.col {
+  flex: 0 1 auto;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.col--bottom {
+  align-self: flex-end;
+}
+
+.col--center {
+  align-self: center;
+}
+
+.col--full-height {
+  align-self: stretch;
+  display: flex;
+  align-items: stretch;
+
+  > .col__inner {
+    flex: 0 1 auto;
+    width: 100%;
+  }
+}
+
+@include make-cols($grid-size);
+
+@media (min-width: $screen-sm) {
+  @include make-cols($grid-size, 'sm');
+}
+
+@media (min-width: $screen-md) {
+  @include make-cols($grid-size, 'md');
+}
+
+@media (min-width: $screen-lg) {
+  @include make-cols($grid-size, 'lg');
+}

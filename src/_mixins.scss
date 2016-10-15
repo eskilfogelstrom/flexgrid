@@ -1,0 +1,20 @@
+@mixin make-col($i, $prefix) {
+  @if $prefix {
+    $prefix: $prefix + '-';
+  }
+    .col.col--#{$prefix}#{$i} {
+      width: $i * 8.33%;
+    }
+    .col.col--#{$prefix}offset-#{$i} {
+      margin-left: $i * 8.33%;
+    }
+    .col.col--#{$prefix}order-#{$i} {
+      order: $i;
+    }
+}
+
+@mixin make-cols($cols, $prefix: null) {
+  @for $i from 1 through $cols {
+    @include make-col($i, $prefix);
+  }
+}

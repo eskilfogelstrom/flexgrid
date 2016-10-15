@@ -1,0 +1,24 @@
+{
+  "name": "flexgrid",
+  "version": "1.0.0",
+  "main": "dist/flexgrid.css",
+  "keywords": [
+    "flexbox",
+    "grid",
+    "layout",
+    "css",
+    "scss"
+  ],
+  "authors": [
+    "Eskil Fogelström"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/eskilfogelstrom/flexgrid",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "demo",
+    "README.md"
+  ]
+}
