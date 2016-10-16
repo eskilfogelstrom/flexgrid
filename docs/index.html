@@ -2,15 +2,18 @@
 <html>
   <head>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atom-one-dark.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
     <link href="css/sigrid.min.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
+    <title>sigrid - A simple grid system</title>
   </head>
   <body>
     <header class="banner">
       <div class="site-wrap">
         <h1 class="banner__title">sigrid</h1>
         <p>A simple grid system based on flexbox for all your layouting needs.</p>
+        <a href="https://github.com/eskilfogelstrom/sigrid" class="btn btn--primary">Github</a>
       </div>
     </header>
     <nav class="site-nav">
@@ -39,6 +42,11 @@
 &lt;/div&gt;
       </code></pre>
     </div>
+    <footer class="site-footer">
+      <div class="site-wrap">
+        Made with &hearts; by <a href="http://eskilfogelstrom.com">eskilfogelstrom</a>
+      </div>
+    </footer>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
     <script>
@@ -47,6 +55,16 @@
           hljs.highlightBlock(block);
         });
       });
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-85735619-2', 'auto');
+      ga('send', 'pageview');
+
     </script>
   </body>
 </html>

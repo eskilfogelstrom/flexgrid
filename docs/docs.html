@@ -3,13 +3,17 @@
 <head>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atom-one-dark.min.css">
   <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
   <link href="css/sigrid.min.css" rel="stylesheet" type="text/css">
   <link href="css/main.css" rel="stylesheet" type="text/css">
+  <title>Docs - sigrid</title>
 </head>
 <body>
 <header class="banner">
   <div class="site-wrap">
-    <h1 class="banner__title">Docs</h1>
+    <h1 class="banner__title">sigrid</h1>
+    <p>A simple grid system based on flexbox for all your layouting needs.</p>
+    <a href="https://github.com/eskilfogelstrom/sigrid" class="btn btn--primary">Github</a>
   </div>
 </header>
 <nav class="site-nav">
@@ -317,6 +321,13 @@
   </div>
   <h3>Space around</h3>
   A nice flexbox tool to even out the leftover space evenly around the columns. The class to use is <code>.row--around</code>.
+  <pre><code class="html">
+&lt;div class="row row--around"&gt;
+  &lt;div class="col col--3"&gt;...&lt;/div&gt;
+  &lt;div class="col col--3"&gt;...&lt;/div&gt;
+  &lt;div class="col col--3"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row row--around">
     <div class="col col--3">
       <div class="col__inner">
@@ -336,6 +347,13 @@
   </div>
   <h3>Space between</h3>
   Almost the same as space around but instead pushes columns to the edges maximizing space in between them. <code>.row--between</code>.
+  <pre><code class="html">
+&lt;div class="row row--between"&gt;
+  &lt;div class="col col--3"&gt;...&lt;/div&gt;
+  &lt;div class="col col--3"&gt;...&lt;/div&gt;
+  &lt;div class="col col--3"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row row--between">
     <div class="col col--3">
       <div class="col__inner">
@@ -354,7 +372,7 @@
     </div>
   </div>
   <h2>Column specific alignment</h2>
-  Sometimes you just want to align that single column and not care about the rest. This is something that sigrids support.
+  Sometimes you just want to align that single column and not care about the rest. This is something that sigrid support.
   Use these directly on the chosen column.
   <pre><code class="html">&lt;div class="col col--*"&gt;...&lt;/div&gt;</code></pre>
   <h3>Full height</h3>
@@ -362,6 +380,15 @@
   <p>
     <strong>Note:</strong> Also requires the content of the column to be placed within a <code>.col__inner</code> if the child also should be full height.
   </p>
+  <pre><code class="html">
+&lt;div class="row"&gt;
+  &lt;div class="col col--4"&gt;...&lt;/div&gt;
+  &lt;div class="col col--4 col--full-height"&gt;
+    &lt;div class="col__inner"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col col--4"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row">
     <div class="col col--4">
       <div class="col__inner">
@@ -381,6 +408,13 @@
   </div>
   <h3>Center</h3>
   To only center one column vertically use <code>.col--center</code>.
+  <pre><code class="html">
+&lt;div class="row"&gt;
+  &lt;div class="col col--4"&gt;...&lt;/div&gt;
+  &lt;div class="col col--4 col--center"&gt;...&lt;/div&gt;
+  &lt;div class="col col--4"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row">
     <div class="col col--4">
       <div class="col__inner">
@@ -399,7 +433,14 @@
     </div>
   </div>
   <h3>Bottom</h3>
-  And lastly, aligning to the bottom with <code>.col--bottom</code>
+  And lastly, aligning to the bottom with <code>.col--bottom</code>.
+  <pre><code class="html">
+&lt;div class="row"&gt;
+  &lt;div class="col col--4"&gt;...&lt;/div&gt;
+  &lt;div class="col col--4 col--bottom"&gt;...&lt;/div&gt;
+  &lt;div class="col col--4"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row">
     <div class="col col--4">
       <div class="col__inner">
@@ -418,6 +459,11 @@
     </div>
   </div>
 </div>
+<footer class="site-footer">
+  <div class="site-wrap">
+    Made with &hearts; by eskilfogelstrom
+  </div>
+</footer>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
 <script>
@@ -426,6 +472,16 @@
       hljs.highlightBlock(block);
     });
   });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85735619-2', 'auto');
+  ga('send', 'pageview');
+
 </script>
 </body>
 </html>

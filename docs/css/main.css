@@ -16,6 +16,13 @@ code {
     font-size: 0.9em;
 }
 
+a {
+    color: #79BF9F;
+}
+a:hover {
+    color: #487560;
+}
+
 .col__inner {
     background-color: #79BF9F;
     color: #fff;
@@ -24,14 +31,37 @@ code {
     text-align: center;
 }
 
+.btn {
+    padding: 15px 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: #896960;
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background-color: #59423c;
+    color: #fff;
+}
+
 .banner {
     background-color: #F3BA08;
     color: #896960;
     padding: 50px 0;
+    text-align: center;
 }
 
 .banner__title {
     color: #fff;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 72px;
+    margin: 0;
+    margin-bottom: 50px;
 }
 
 .site-wrap {
@@ -86,4 +116,10 @@ code {
     margin-top: 10px;
     margin-bottom: 10px;
     display: block;
+}
+
+.site-footer {
+    margin-top: 50px;
+    padding: 15px;
+    color: #999;
 }
