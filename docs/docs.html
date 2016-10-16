@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atom-one-dark.min.css">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
   <link href="css/flexgrid.min.css" rel="stylesheet" type="text/css">
   <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
@@ -22,17 +23,22 @@
 <div class="site-wrap">
   <h2>Introduction</h2>
   The flexgrid consists of two base classes <code>.row</code> and <code>.col</code>.
-  Both of these has a bunch of modifiers prefixed with double dashes which should be used on top of the base class <code>&lt;div class="col col--*"&gt;...&lt;/div&gt;</code>.
+  Both of these has a bunch of modifiers prefixed with double dashes which should be used on top of the base class.
+  <pre><code class="html">
+&lt;div class="row row--*"&gt;
+  &lt;div class="col col--*"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <h2>Columns</h2>
   <h3>12 column sizes</h3>
   The flexgrid has 12 column sizes that can be combined in anyway possible. The width is accessed by simply using <code>.col--*</code>.
-  <code class="code code--block">
-    <div class="row">
-      <div class="col col--4">...</div>
-      <div class="col col--4">...</div>
-      <div class="col col--4">...</div>
-    </div>
-  </code>
+  <pre><code class="html">
+&lt;div class="row"&gt;
+  &lt;div class="col col--4"&gt;...&lt;/div&gt;
+  &lt;div class="col col--4"&gt;...&lt;/div&gt;
+  &lt;div class="col col--4"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row">
     <div class="col col--6">
       <div class="col__inner">
@@ -118,13 +124,13 @@
   </div>
   <h3>Offsets</h3>
   As with the different sizes there are an equal amount off offsets that you can use.
-  <code class="code code--block">
-    <div class="row">
-      <div class="col col--6 col--offset-6">...</div>
-      <div class="col col--7 col--offset-5">...</div>
-      <div class="col col--8 col--offset-4">...</div>
-    </div>
-  </code>
+  <pre><code class="html">
+&lt;div class="row"&gt;
+  &lt;div class="col col--6 col--offset-6"&gt;...&lt;/div&gt;
+  &lt;div class="col col--7 col--offset-5"&gt;...&lt;/div&gt;
+  &lt;div class="col col--8 col--offset-4"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row">
     <div class="col col--6 col--offset-6">
       <div class="col__inner">
@@ -149,13 +155,13 @@
   <h3>Ordering</h3>
   Sometimes you may want to re-order columns differently than what their source order says. This is simple with the class <code>.col--order-*</code>.
   This becomes especially powerful when combining with responsive breakpoints <strong>(See below)</strong>.
-  <code class="code code--block">
-    <div class="row">
-      <div class="col col--4 col--order-3">1</div>
-      <div class="col col--4 col--order-2">2</div>
-      <div class="col col--4 col--order-1">3</div>
-    </div>
-  </code>
+  <pre><code class="html">
+&lt;div class="row"&gt;
+  &lt;div class="col col--4 col--order-3"&gt;1&lt;/div&gt;
+  &lt;div class="col col--4 col--order-2"&gt;2&lt;/div&gt;
+  &lt;div class="col col--4 col--order-1"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row">
     <div class="col col--4 col--order-3">
       <div class="col__inner">
@@ -187,12 +193,12 @@
   </ul>
   You can prefix any of the modifiers above, <code>.col--sm-*</code>, <code>.col--sm-offset-*</code> and <code>.col--sm-order-*</code>.
   If no prefix is set it will be applied to all screen sizes unless overriden by a prefixed modifier.
-  <code class="code code--block">
-    <div class="row">
-      <div class="col col--12 col--sm-5 col--md-4 col--lg-3">...</div>
-      <div class="col col--12 col--sm-7 col--md-8 col--lg-9">...</div>
-    </div>
-  </code>
+  <pre><code class="html">
+&lt;div class="row"&gt;
+  &lt;div class="col col--12 col--sm-5 col--md-4 col--lg-3"&gt;...&lt;/div&gt;
+  &lt;div class="col col--12 col--sm-7 col--md-8 col--lg-9"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row">
     <div class="col col--12 col--sm-5 col--md-4 col--lg-3">
       <div class="col__inner">
@@ -207,15 +213,17 @@
   </div>
   <h2>Rows</h2>
   Flexgrid is built on flexbox (surprise ey?) which allows you to do some pretty neat alignment of the columns within the row.
+  Add a modifier to the row like this:
+  <pre><code class="html">&lt;div class="row row--*"&gt;...;&lt;/div&gt;</code></pre>
   <h3>Autofill width</h3>
   Sometimes you don't want to do the math and just add columns and let the code figure out what the width should be.
   Just add <code>.row--autofill</code> to evenly distribute the width among the columns.
-  <code class="code code--block">
-    <div class="row row--autofill">
-      <div class="col">...</div>
-      <div class="col">...</div>
-    </div>
-  </code>
+  <pre><code class="html">
+&lt;div class="row row--autofill"&gt;
+  &lt;div class="col"&gt;...&lt;/div&gt;
+  &lt;div class="col"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row row--autofill">
     <div class="col">
       <div class="col__inner">
@@ -248,19 +256,19 @@
   <h3>Equal height</h3>
   Flexgrid makes handling one of the ick-iest problems of web design easy &mdash; equal height columns. Drop in the  class <code>.row--full-height</code> and it's done.
   Often though you also want the child of the column to be full height. This is supported but requires some additional markup.
-  <code class="code code--block">
-    <div class="row row--full-height">
-      <div class="col col--4">
-        <div class="col__inner">...</div>
-      </div>
-      <div class="col col--4">
-        <div class="col__inner">...</div>
-      </div>
-      <div class="col col--4">
-        <div class="col__inner">...</div>
-      </div>
-    </div>
-  </code>
+  <pre><code class="html">
+&lt;div class="row row--full-height"&gt;
+  &lt;div class="col col--4"&gt;
+    &lt;div class="col__inner"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col col--4"&gt;
+    &lt;div class="col__inner"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col col--4"&gt;
+    &lt;div class="col__inner"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
   <div class="row row--full-height">
     <div class="col col--4">
       <div class="col__inner">
@@ -299,9 +307,6 @@
   </div>
   <h3>Align bottom</h3>
   Align to the bottom of the row with <code>.row--bottom</code>.
-  <code class="code code--block">
-    <div class="row row--bottom">...</div>
-  </code>
   <div class="row row--bottom">
     <div class="col col--4">
       <div class="col__inner">
@@ -321,9 +326,6 @@
   </div>
   <h3>Center horizontally</h3>
   To center on the horizontal axis use <code>.row--center</code>. This can be neat if you have a size that doesn't allow centering by using offsets.
-  <code class="code code--block">
-    <div class="row row--center">...</div>
-  </code>
   <div class="row row--center">
     <div class="col col--4">
       <div class="col__inner">
@@ -333,9 +335,6 @@
   </div>
   <h3>Align right</h3>
   To align right drop in the class <code>.row--right</code>.
-  <code class="code code--block">
-    <div class="row row--right">...</div>
-  </code>
   <div class="row row--right">
     <div class="col col--4">
       <div class="col__inner">
@@ -345,9 +344,6 @@
   </div>
   <h3>Space around</h3>
   A nice flexbox tool to even out the leftover space evenly around the columns. The class to use is <code>.row--around</code>.
-  <code class="code code--block">
-    <div class="row row--around">...</div>
-  </code>
   <div class="row row--around">
     <div class="col col--3">
       <div class="col__inner">
@@ -367,9 +363,6 @@
   </div>
   <h3>Space between</h3>
   Almost the same as space around but instead pushes columns to the edges maximizing space in between them. <code>.row--between</code>.
-  <code class="code code--block">
-    <div class="row row--between">...</div>
-  </code>
   <div class="row row--between">
     <div class="col col--3">
       <div class="col__inner">
@@ -390,6 +383,7 @@
   <h2>Column specific alignment</h2>
   Sometimes you just want to align that single column and not care about the rest. This is something that flexgrids support.
   Use these directly on the chosen column.
+  <pre><code class="html">&lt;div class="col col--*"&gt;...&lt;/div&gt;</code></pre>
   <h3>Full height</h3>
   To just give one column full height (like in the equal heights example) use <code>.col--full-height</code>.
   <p>
@@ -451,5 +445,14 @@
     </div>
   </div>
 </div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
 </body>
 </html>
