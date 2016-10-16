@@ -1,10 +1,10 @@
 {
-  "name": "flexgrid",
+  "name": "sigrid",
   "version": "1.0.0",
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eskilfogelstrom/flexgrid.git"
+    "url": "git+https://github.com/eskilfogelstrom/sigrid.git"
   },
   "keywords": [
     "flexbox",
@@ -16,9 +16,9 @@
   "author": "Eskil Fogelström",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eskilfogelstrom/flexgrid/issues"
+    "url": "https://github.com/eskilfogelstrom/sigrid/issues"
   },
-  "homepage": "https://github.com/eskilfogelstrom/flexgrid#readme",
+  "homepage": "https://eskilfogelstrom.github.io/sigrid",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",

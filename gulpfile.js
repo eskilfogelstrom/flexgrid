@@ -5,7 +5,7 @@ var rename = require('gulp-rename');
 var cssnano = require('gulp-cssnano');
 
 gulp.task('build', function() {
-  return gulp.src('src/flexgrid.scss')
+  return gulp.src('src/sigrid.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 3 versions']
@@ -14,7 +14,7 @@ gulp.task('build', function() {
 });
 
 gulp.task('build:min', ['build'], function() {
-  return gulp.src('dist/flexgrid.css')
+  return gulp.src('dist/sigrid.css')
     .pipe(cssnano())
     .pipe(rename(function(path) {
       path.basename += '.min';

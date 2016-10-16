@@ -1,7 +1,7 @@
 {
-  "name": "flexgrid",
+  "name": "sigrid",
   "version": "1.0.0",
-  "main": "dist/flexgrid.css",
+  "main": "dist/sigrid.css",
   "keywords": [
     "flexbox",
     "grid",
@@ -13,7 +13,7 @@
     "Eskil Fogelström"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/eskilfogelstrom/flexgrid",
+  "homepage": "https://eskilfogelstrom.github.io/sigrid",
   "ignore": [
     "**/.*",
     "node_modules",
