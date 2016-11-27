@@ -19,6 +19,7 @@
     "url": "https://github.com/eskilfogelstrom/sigrid/issues"
   },
   "homepage": "https://eskilfogelstrom.github.io/sigrid",
+  "main": "src/sigrid.scss",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
